@@ -3,11 +3,12 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var request = require("request");
 var app = express();
 
 const
   admin = new (require('./bin/admin'))
-  port = 8000;
+  port = 3000;
   ;
 
 // Socket.io server
@@ -112,9 +113,13 @@ function initUserConnection(socket){
 			// });
 		})
 		.on('test socketio',function(data){
-
 			admin.lets_test_socketIO(data,response =>{
 				socket.emit('tested socketio',response);
+			});
+        })
+        .on('get user information',function(data){
+			admin.get_user_information(data,response =>{
+				socket.emit('got user information',response);
 			});
 		})
 	  ;

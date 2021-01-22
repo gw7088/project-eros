@@ -2,12 +2,41 @@ extends layout
 
 block layout-content
   div.View.WelcomeView
-    h1.Banner WHATABYTE
-    div.Message
-      div.Title
-        h3 Making the Best
-        h1 Food For Devs
-      span.Details Access the WHATABYTE Team Portal
+    h1.Banner Looking For Something To Do?
+    .row(style="width: 100%; margin-right: 0; margin-left: 0;")
+      .col
+        .row
+          .col.text-center
+            span.Title 
+              h1 🍲 Food 🥡
+        div.Message
+          // div.buissness_card.rounded(style="background-color: #B4DFE5; margin:10px; padding:inherit;")
+          div.buissness_card.rounded.border(style="padding:7px;")
+            .row
+              .col.d-inline-block
+                <img src="http://s3-media2.fl.yelpcdn.com/bphoto/MmgtASP3l_t4tPCL1iAsCg/o.jpg" class="img-fluid rounded" alt="Responsive image" style="width:120px; height:120px;">
+                .h4.name(style="font-family: 'Raleway', sans-serif;") Four Barrel Coffee
+                <span class="price">💰 : $  |</span> <span class="rating">⭐ : 4</span>              
+      .col
+        .row
+          .col.text-center
+            span.Title
+              h1 🏌️‍♀️ Activites 🚴
+        div.Message
+          div.Title
+            h3 Making the Best
+            h1 Food For Devs
+          span.Details Access the WHATABYTE Team Portal
+      .col
+        .row
+          .col.text-center
+            span.Title
+              h1 🤷🏿‍♂️ Misc 🎲
+        div.Message
+          div.Title
+            h3 Making the Best
+            h1 Food For Devs
+          span.Details Access the WHATABYTE Team Portal
     div.NavButtons
       a(href="/user")
           div.NavButton Just dive in!
