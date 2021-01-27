@@ -85,8 +85,9 @@ a {
   border-radius: 5px;
 
   overflow: hidden;
-  background: #F4976C;
+  background: black;
   padding: 15px;
+  color: white;
 
   font-family: "Share Tech Mono", monospace;
 
@@ -143,12 +144,73 @@ a {
 
 .WelcomeView {
     /* background: url("/images/food.jpg") left bottom; */
-    background-color: #fbe8a6;
+    background-color: whitesmoke;
     background-size: cover;
 }
 
 .UserView {
   /* background: url("/images/patio.jpeg") left bottom; */
-  background-color: #fbe8a6;
+  background-color: whitesmoke;
   background-size: cover;
+}
+
+.hoverzoom-105,
+.hoverzoom-110,
+.hoverzoom-120,
+.hoverzoom-125,
+.hoverzoom-130,
+.hoverzoom-150,
+.hoverzoom-200,
+.hoverzoom-250,
+.hoverzoom-300,
+.hoverzoom{
+	-webkit-transition: transform 0.25s;
+	-o-transition: transform 0.25s;
+	transition: transform 0.25s;
+	transform-style: preserve-3d;
+}
+.hoverzoom:hover{
+	-webkit-transform: scale(1.3);
+	-ms-transform: scale(1.3);
+	transform: scale(1.3);
+}
+.hoverzoom-105:hover{
+	-webkit-transform: scale(1.05);
+	-ms-transform: scale(1.05);
+	transform: scale(1.05);
+}
+.hoverzoom-110:hover{
+	-webkit-transform: scale(1.1);
+	-ms-transform: scale(1.1);
+	transform: scale(1.1);
+}
+.hoverzoom-120:hover{
+	-webkit-transform: scale(1.2);
+	-ms-transform: scale(1.2);
+	transform: scale(1.2);
+}
+.hoverzoom-125:hover{
+	-webkit-transform: scale(1.25);
+	-ms-transform: scale(1.25);
+	transform: scale(1.25);
+}
+.hoverzoom-130:hover{
+	-webkit-transform: scale(1.3);
+	-ms-transform: scale(1.3);
+	transform: scale(1.3);
+}
+.hoverzoom-150:hover{
+	-webkit-transform: scale(1.5);
+	-ms-transform: scale(1.5);
+	transform: scale(1.5);
+}
+.hoverzoom-200:hover{
+	-webkit-transform: scale(2);
+	-ms-transform: scale(2);
+	transform: scale(2);
+}
+.hoverzoom-300:hover{
+	-webkit-transform: scale(3);
+	-ms-transform: scale(3);
+	transform: scale(3);
 }
