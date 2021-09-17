@@ -102,3 +102,13 @@ dist
 
 # TernJS port file
 .tern-port
+
+# Stuff
+.git
+.git/*
+.ftp*
+sftp.json
+.vs
+.vs*
+.vscode
+.vscode/*

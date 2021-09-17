@@ -20,20 +20,6 @@ io.on('connection',function(socket){
 	initUserConnection(socket);
 	userConnected(socket);
 });
-// var server = require('http').Server(app);	// TODO: configure http server to redirect to https
-// var httpServer = require('http').createServer(app);
-// var serverHTTPS = require('https').createServer(httpsCredentials,app);
-// var serverHTTPS = require('https').createServer(app);
-// var io = require('socket.io')(serverHTTPS, {
-// 	// pingInterval: 30000, // <-- Default ping interval - how many ms before sending a new ping packet
-// 	// pingTimeout: 5000, // <-- Default ping interval - how many ms without a pong packet to consider the connection closed
-// 	pingInterval: 30000, // <-- RESOLUTION ping interval - how many ms before sending a new ping packet
-// 	pingTimeout: 10000, // <-- RESOLUTION ping interval - how many ms without a pong packet to consider the connection closed
-// });
-// var io = require('socket.io')(app);
-// var io = require('socket.io').listen(server);
-// const io = require('socket.io')(httpServer);
-
 
 // Routes
 const
