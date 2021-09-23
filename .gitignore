@@ -112,3 +112,4 @@ sftp.json
 .vs*
 .vscode
 .vscode/*
+CNAME.txt
