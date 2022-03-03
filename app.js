@@ -5,21 +5,35 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var request = require("request");
 var app = express();
+// export SESSION_SECRET='t067t68PxfWbvY8JoGiYZCWJk0FFrOZB'
+var session = require('express-session')({
+	key: 'user_sid',
+	secret: 't067t68PxfWbvY8JoGiYZCWJk0FFrOZB',
+	resave: true,	// <-- This was false, before adding io session middleware
+	saveUninitialized: true,	// <-- This was false, before adding io session middleware
+	cookie: {
+	  // maxAge: 600000
+	  maxAge: 86400000
+	}
+});
+var sharedsession = require("express-socket.io-session");
+
 
 const
   admin = new (require('./bin/admin'))
-  port = 3000;
+  port = 8080;
   ;
 
 // Socket.io server
-var httpServer = require('http').Server(app);
-const io = require('socket.io')(httpServer);
-
+const httpServer = require("http").createServer(app);
+const options = { /* ... */ };
+const io = require("socket.io")(httpServer, options);
 // Socket handlers
 io.on('connection',function(socket){
 	initUserConnection(socket);
 	userConnected(socket);
 });
+httpServer.listen(8080);
 
 // Routes
 const
@@ -30,6 +44,13 @@ const
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
+
+// Session
+app.use(session);
+io.use(sharedsession(
+	session,
+	{ autoSave:true } 
+));
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -57,12 +78,6 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-module.exports = {
-	app,
-	httpServer: httpServer,
-  	// serverHTTPS: serverHTTPS,
-	io: io
-};
 
 function userConnected(socket){
 	// Get a token and assign it to the user, before we do anything else

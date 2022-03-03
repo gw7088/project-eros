@@ -1,6 +1,3 @@
-// var port = window.location.port;
-// var socket = io(`//${window.location.hostname}:${port}`);
-// const socket = io('ws://localhost:3000');
 var socket = io();
 
 socket

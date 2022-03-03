@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+    "real": "pm2 start app.js",
     "start": "pm2 start ./bin/www",
     "test": "nodemon app.js"
   },
