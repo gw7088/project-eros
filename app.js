@@ -38,6 +38,7 @@ httpServer.listen(8080);
 // Routes
 const
   indexRouter = require('./routes/index'),
+  mainRouter = require('./routes/mainpage'),
   userRouter = require('./routes/user')
   ;
 
@@ -60,6 +61,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Hooking it up
 app.use('/', indexRouter);
+app.use('/main', mainRouter);
 app.use('/user', userRouter);
 
 // catch 404 and forward to error handler
