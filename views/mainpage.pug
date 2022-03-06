@@ -1,51 +1,19 @@
 extends layout
 
 block layout-content
-  .container-fluid.View.WelcomeView
-
-    .container-fluid
-      .row.Banner.text-center
-        .col-2
-          div.h1 👑 
-        .col-8
-          div.h1 Victory Sweepstakes
-        .col-2
-          div.h1 👑 
-
-    .container-fluid.mt-1
-      .row.text-center(style="display:grid; color:black;")
-        h3 Will you be the Next
-      .row.text-center(style="display:grid; color:black;")
-        h3 Winner?
-    .container-fluid.text-center.mt-2
+  div.View.WelcomeView
+    .container
+      h1.Banner.mb-4 Looking For Something To Do?
+    .container
+      .row.text-center.mt-2
+        .col-6
+          h1 🍲 Food 🥡
+        .col-6
+          h1 🏌️‍♀️ Activites 🚴
       .row
-        h2.enter-title Ⓔⓝⓣⓔⓡ ⓣⓞ ⓦⓘⓝ
-      .row
-        h1.enter-title $ 50,000.00
-    .container-fluid
-      .row
-        form(class="form-signin")
-              .row
-                #error
-                  if error
-                      p.text-danger Error!!!
-                - var h1Classes = ['h3', 'mb-3', 'font-weight-normal', 'text-center']
-                h1(class=h1Classes style="color:gold;") Fill In Form To Enter
-              //- Input Email
-              .row.m-1
-                // label( for="inputEmail" class="sr-only") Email Address
-                input(type="email" name="username" id="inputEmail" class="form-control" placeholder="Email Address" required autofocus)
-              //- Input Phone
-              .row.m-1
-                // label(for="inputPhone" class="sr-only") Phone
-                input(type="phone" name="phone" id="inputPhone" class="form-control mt-1" placeholder="Phone" required)
-              .row.m-1
-                //- Complete form button
-                - var buttonClass=['btn', 'btn-lg', 'btn-block', 'mt-3'];
-                button.submit(class=buttonClass type="submit")  Confirm Entry
-              .row
-                - var pClasses=['mt-4', 'mb-1', 'text-white', 'text-center'];
-                p(class=pClasses) © 2022
-        
+        .col-6
+          .foodList(style="overflow-y: scroll; max-height: 535px;")
+        .col-6
+          .activitiesList(style="overflow-y: scroll; max-height: 535px;")
   link(rel='stylesheet', href='/stylesheets/mainpage.css', type='text/css')
   script(src="/javascripts/mainpage.js")

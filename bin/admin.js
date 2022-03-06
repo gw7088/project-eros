@@ -4,7 +4,9 @@ const
     Utils = require('./utils'),
     request = require('request'),
     UIDGenerator = require('uid-generator'),
-    uidgen = new UIDGenerator()
+    uidgen = new UIDGenerator(),
+    path = require('path'),
+    fs = require('fs')
 ;
 
 module.exports = class Admin extends Utils{
@@ -72,6 +74,39 @@ module.exports = class Admin extends Utils{
                     return callback(motherData);
                 });
             });
+        });
+    }
+
+    register_user(options,callback){
+        let self=this;
+        if (typeof callback!='function') callback = function(){};
+        
+        var registered_ppl;
+        // -----> Give me the list off registered ppl
+        fs.readFile(path.resolve('registered.json'), function (error, content) {
+            if(error){
+                // console.log(error);
+                return callback(self.simpleFail('Error registering'));
+            }
+            registered_ppl = JSON.parse(content);
+
+            // To add or not to add
+            if(!registered_ppl[options.email]){
+                registered_ppl[options.email] = options;
+            }
+            else{
+                return callback(self.simpleFail('Already registered'));
+            }
+
+            // -----> Register them peeps
+            var jsonContent = JSON.stringify(registered_ppl);
+            fs.writeFile(path.resolve('registered.json'), jsonContent, 'utf8', function (err) {
+                if (err) {
+                    // console.log(err);
+                    return callback(self.simpleFail('Error registering'));
+                }
+                return callback(self.simpleSuccess('Registration request complete',options));
+            });    
         });
     }
 }

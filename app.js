@@ -125,5 +125,10 @@ function initUserConnection(socket){
 				socket.emit('got user information',response);
 			});
 		})
+		.on('register user',function(data){
+			admin.register_user(data,response =>{
+				socket.emit('user registered',response);
+			});
+		})
 	  ;
 }
