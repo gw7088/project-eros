@@ -13,6 +13,19 @@
 .text-responsive {
     font-size: calc(100% + 1vw + 1vh);
 }
+.timeBox{
+  background-color: rgb(41 153 41 / .65);
+  border-radius: 15px;
+  border: var(--ui-shadow-border);
+  box-shadow: var(--ui-shadow);
+  width: 30vh;
+  display: none;
+}
+.time {
+  font-family: math;
+  font-weight: bold;
+  color: orangered;
+}
 
 
 /** Form styling */
