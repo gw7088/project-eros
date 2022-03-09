@@ -8,9 +8,9 @@ function initHandlers(){
         .on('user registered',userRegistered)
     ;
 
+    // What happens when submit is clicked.
     $('.submit').click(onSubmitClicked);
-
-    // Time countdown on page logic
+    // Updates timer on page. Time till next day.
     updateTime();
 }
 
@@ -52,6 +52,12 @@ function updateTime(){
         document.getElementById("time").innerHTML = "EXPIRED";
         }
         if(!$(".timeBox").is(":visible")) $('.timeBox').show();
+        // Conditionally remove element if it exists..
+        if($('.sp-brand-link').length) $('.sp-brand-link').html('');
+        if($('.sp-show').length)
+            on();
+        else
+            off();
     }, 1000);
 }
 
