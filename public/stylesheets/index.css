@@ -18,13 +18,13 @@
   border-radius: 15px;
   border: var(--ui-shadow-border);
   box-shadow: var(--ui-shadow);
-  width: 30vh;
+  width: 35vh;
   display: none;
 }
 .time {
   font-family: math;
   font-weight: bold;
-  color: orangered;
+  color: #6b2106;
 }
 
 
