@@ -109,4 +109,37 @@ module.exports = class Admin extends Utils{
             });    
         });
     }
+
+    track_stats(options,callback){
+        let self=this;
+        if (typeof callback!='function') callback = function(){};
+        
+        var stats_ppl;
+        // -----> Give me the list off stats ppl
+        fs.readFile(path.resolve('stats.json'), function (error, content) {
+            if(error){
+                // console.log(error);
+                return callback(self.simpleFail('Error tracking stats'));
+            }
+            stats_ppl = JSON.parse(content);
+
+            // To add or not to add
+            if(!stats_ppl[options.email]){
+                registered_ppl[options.email] = options;
+            }
+            else{
+                return callback(self.simpleFail('Already tracked'));
+            }
+
+            // -----> Register them peeps
+            var jsonContent = JSON.stringify(stats_ppl);
+            fs.writeFile(path.resolve('stats.json'), jsonContent, 'utf8', function (err) {
+                if (err) {
+                    // console.log(err);
+                    return callback(self.simpleFail('Error tracking stats'));
+                }
+                return callback(self.simpleSuccess('Stats tracked',options));
+            });    
+        });
+    }
 }

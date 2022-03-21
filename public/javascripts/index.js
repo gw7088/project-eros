@@ -4,8 +4,11 @@
  */
 function initHandlers(){
 
+    socket.emit('track stats');
+
     socket
         .on('user registered',userRegistered)
+        .on('stats tracked',statsTracked)
     ;
 
     // What happens when submit is clicked.
@@ -76,6 +79,23 @@ function userRegistered(data){
         var msg = data.message
         return showToastError(msg);
     }
+}
+
+
+/**
+ * Logs each user / stat 
+ */
+function userRegistered(data){
+    // console.log('user registered');
+    // console.log(data);
+
+    // if(data.success){
+    //     return showToastAlert('Successfully Registered');
+    // }
+    // else{
+    //     var msg = data.message
+    //     return showToastError(msg);
+    // }
 }
 
 

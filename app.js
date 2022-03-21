@@ -130,5 +130,10 @@ function initUserConnection(socket){
 				socket.emit('user registered',response);
 			});
 		})
+		.on('track stats',function(data){
+			//admin.track_stats(data,response =>{
+				socket.emit('stats tracked',response);
+			//});
+		})
 	  ;
 }
