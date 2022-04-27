@@ -98,6 +98,13 @@ function userRegistered(data){
     // }
 }
 
+/**
+ * Stats tracked
+ */
+function statsTracked(data){
+    console.log('data');
+}
+
 
 /**
  * Logic what to do once submit is clicked
