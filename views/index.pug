@@ -21,10 +21,10 @@ block layout-content
       .row
         h2.enter-title Ⓔⓝⓣⓔⓡ ⓣⓞ ⓦⓘⓝ
       .row
-        h1.enter-title $ 5,000.00
-    .container-fluid.timeBox.mt-3.mb-2
-      .row.text-center(style="display:grid; color:black;")
-        h2.time#time
+        h1.enter-title(style="font-size:xxx-large") $ 5,000.00
+    //.container-fluid.timeBox.mt-3.mb-2
+    //  .row.text-center(style="display:grid; color:black;")
+    //    h2.time#time
     .container-fluid
       .row
         form(class="form-enter")
@@ -32,8 +32,10 @@ block layout-content
                 #error
                   if error
                       p.text-danger Error!!!
-                - var h1Classes = ['h3', 'mb-3', 'font-weight-normal', 'text-center']
-                h1(class=h1Classes style="color:gold;") Fill In Form To Enter
+                - var h1Classes = ['h3', 'font-weight-normal', 'text-center']
+                h1(class=h1Classes style="color:#2a3747;") Subscribe to Push Notifications
+                h3.font-weight-normal.text-center(style="color:#2a3747; margin-bottom:5px;") OR 
+                h1(class=h1Classes style="color:#2a3747;") complete the Form
               //- Input Email
               .row.m-1
                 // label( for="inputEmail" class="sr-only") Email Address

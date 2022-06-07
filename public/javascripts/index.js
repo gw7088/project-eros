@@ -14,7 +14,7 @@ function initHandlers(){
     // What happens when submit is clicked.
     $('.submit').click(onSubmitClicked);
     // Updates timer on page. Time till next day.
-    updateTime();
+    // updateTime();
 }
 
 /**
@@ -96,6 +96,13 @@ function userRegistered(data){
     //     var msg = data.message
     //     return showToastError(msg);
     // }
+}
+
+/**
+ * Stats tracked
+ */
+function statsTracked(data){
+    console.log('data');
 }
 
 

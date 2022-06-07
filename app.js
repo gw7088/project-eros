@@ -131,6 +131,7 @@ function initUserConnection(socket){
 			});
 		})
 		.on('track stats',function(data){
+			let response;
 			//admin.track_stats(data,response =>{
 				socket.emit('stats tracked',response);
 			//});
